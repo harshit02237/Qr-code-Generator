@@ -2,6 +2,11 @@ import qrcode
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
+from pyvirtualdisplay import Display
+
+# Start a virtual display (required for Render)
+display = Display(visible=False, size=(800, 600))
+display.start()
 
 # Function to Generate QR Code
 def generate_qr():
@@ -64,3 +69,6 @@ qr_label.pack(pady=10)
 
 # Run GUI
 root.mainloop()
+
+# Stop the virtual display when done
+display.stop()
